@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="杰哥">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>表白小姐姐</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100%;
+      overflow-y: auto;
+      background: url("images/bg.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    .title {
+      margin: 20px auto;
+      color: #a316cb;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .music-area,
+    .heart-area {
+      display: inline-block;
+      width: 45%;
+      height: 100%;
+    }
+
+
+    .heart-pic {
+      width: 200px;
+      height: 200px;
+      perspective: 750px;
+      margin: 60px auto 10px;
+    }
+
+    .heart-pic .photo {
+      position: relative;
+      transform-style: preserve-3d;
+      -moz-animation: slide 10s linear infinite;
+      -webkit-animation: slide 10s linear infinite;
+    }
+
+    .heart-pic .photo ul li {
+      list-style: none;
+      position: absolute;
+      top: 0;
+      left: 0
+    }
+
+    .heart-pic .photo ul li img {
+      width: 150px;
+      height: 150px;
+    }
+
+    .music-area {
+      height: 400px;
+      padding-top: 160px;
+      overflow-y: hidden;
+      margin: 50px 0 0 8%;
+      float: right;
+    }
+
+    @-moz-keyframes slide {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+
+    @-webkit-keyframes slide {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+
+    .love-words {
+      margin: 10px 30px;
+    }
+
+    .love-words p {
+      font-size: 16px;
+      color: #a316cb;
+      font-family: "微软雅黑";
+      font-weight: 800;
+      text-indent: 2em;
+      line-height: 24px;
+    }
+
+    .m_line {
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 500;
+      color: #2131c5;
+      margin-left: 20px;
+      text-align: center;
+    }
+
+    .se {
+      color: #a316cb;
+      font-size: 18px;
+      font-weight: 1000;
+    }
+
+    .texiao {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+    }
+
+    .move-pic {
+      width: 150px;
+      height: 150px;
+      position: fixed;
+      transform: translate(-50%, -50%);
+    }
+
+    .move1 {
+      -webkit-animation: move1 10s linear infinite;
+    }
+
+    .move2 {
+      -webkit-animation: move2 10s linear infinite;
+    }
+
+    @-webkit-keyframes move1 {
+      0% {
+        top: 30%;
+        left: 50%;
+        opacity: 1;
+      }
+      15% {
+        top: 20%;
+        left: 35%;
+        opacity: 0.5;
+      }
+      35% {
+        top: 50%;
+        left: 25%;
+        opacity: 0.8;
+      }
+      50% {
+        top: 80%;
+        left: 50%;
+        opacity: 1.0;
+      }
+      65% {
+        top: 50%;
+        left: 75%;
+        opacity: 0.8;
+      }
+      85% {
+        top: 20%;
+        left: 65%;
+        opacity: 0.5;
+      }
+      100% {
+        top: 30%;
+        left: 50%;
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes move2 {
+      0% {
+        top: 30%;
+        left: 50%;
+        opacity: 1;
+      }
+      15% {
+        top: 20%;
+        left: 65%;
+        opacity: 0.5;
+      }
+      35% {
+        top: 50%;
+        left: 75%;
+        opacity: 0.8;
+      }
+      50% {
+        top: 80%;
+        left: 50%;
+        opacity: 1.0;
+      }
+      65% {
+        top: 50%;
+        left: 25%;
+        opacity: 0.8;
+      }
+      85% {
+        top: 20%;
+        left: 35%;
+        opacity: 0.5;
+      }
+      100% {
+        top: 30%;
+        left: 50%;
+        opacity: 1;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <h3 class="title"></h3>
+  <div class="heart-area">
+    <div class="heart-pic">
+      <div class="photo">
+        <ul>
+          <li><img src="images/1.gif" /></li>
+          <li><img src="images/2.gif" /></li>
+          <li><img src="images/3.gif" /></li>
+          <li><img src="images/4.gif" /></li>
+          <li><img src="images/5.gif" /></li>
+          <li><img src="images/6.gif" /></li>
+        </ul>
+      </div>
+    </div>
+    <div class="love-words">
+      <p id="words"></p>
+    </div>
+  </div>
+  <div class="music-area"></div>
+  <audio id="audio" src="mp3/苏仨 - 爱的就是你.mp3" loop></audio>
+  <textarea id="lrc" style="display:none;">
+    [00:02.00]刘佳 - 爱的就是你
+    [00:08.00]
+    [00:10.00]作词：刘佳 作曲：刘佳
+    [00:16.00]
+    [00:18.00]歌词编辑：薰风习习
+    [00:24.00]QQ：335020326
+    [00:30.00]
+    [00:32.31]无论我走到哪里都不能停止想你
+    [00:37.72]亲爱的在我心里没人比你更美丽
+    [00:43.03]轻轻唱123为你谱下一段旋律
+    [00:47.98]让星星解开童话故事中的谜底
+    [00:52.53]Oh my god 我已经爱上她 真实的表达
+    [00:55.70]像喝了奇怪药水中了魔法
+    [00:57.73]街上溜溜达达还是不想回家
+    [01:00.11]一个人看着电影嘴里嚼着爆米花
+    [01:03.01]噢每分每秒都想和你通电话
+    [01:05.66]飞到巴黎铁塔下自在的喝奶咖
+    [01:08.18]去百幕大 看海和沙 跳桑巴
+    [01:10.51]点燃了火把我们尽情唱吧
+    [01:13.32]我要爱 爱 爱 的就是你 可爱女孩
+    [01:18.20]天上星星我为你摘 所有账单我来买
+    [01:23.26]跟我来 耍帅 帽子一起歪歪戴
+    [01:28.46]全世界我只爱你一个 永不言改
+    [01:34.61]看窗外出现彩虹 天空就会放晴
+    [01:39.55]公主和王子剧情 害你哭红了眼睛
+    [01:44.82]六合彩你总赢 点双人份冰激凌
+    [01:49.81]让所有情敌胆怯 比谁拳头更硬
+    [01:54.79]你向左走 向右走 我陪你左右
+    [01:57.26]满脑子都是你 不再想某 某 某
+    [01:59.60]交通灯切换 红黄绿 恋爱要遵循的规律
+    [02:02.46]别整天痛哭流涕 突然又笑的像喝了罐蜜
+    [02:04.85]Baby baby honey you like s sweet candy
+    [02:07.25]城堡的交响曲 哼唱着1 2 3 4 5 6 7
+    [02:10.44]滴 滴 随时随地call 你
+    [02:12.39]Hi come on come on 我形影不离
+    [02:15.30]我要爱 爱 爱 的就是你 可爱女孩
+    [02:20.07]天上星星我为你摘 所有账单我来买
+    [02:25.15]跟我来 耍帅 帽子一起歪歪戴
+    [02:30.34]全世界我只爱你一个 永不言改
+    [02:37.51]
+    [02:42.07]歌词编辑：薰风习习
+    [02:47.11]QQ：335020326
+    [02:52.19]
+    [02:56.43]爱情像龙卷风我们被卷入其中
+    [02:58.98]就是要爱的天崩地裂轰轰隆隆
+    [03:01.71]爱难免会失控 也别装可怜虫
+    [03:04.14]陷入 迷宫 惊恐 伤痛 难做英雄
+    [03:07.03]喜欢你笑啊 像鲜艳的花
+    [03:09.49]偷偷传的情话 被报成八卦
+    [03:12.27]解开爱的密码 开心我随便刷
+    [03:14.62]Di la di di la di 咒语被施法
+    [03:17.02]噢 想你 噢 爱你 在一起 永远永远不分离
+    [03:26.98]我要爱 爱 爱 的就是你 可爱女孩
+    [03:32.22]天上星星我为你摘 所有账单我来买
+    [03:37.49]跟我来 耍帅 帽子一起歪歪戴
+    [03:42.56]全世界我只爱你一个 永不言改
+    [03:48.09]我要爱 爱 爱 的就是你 可爱女孩
+    [03:52.86]天上星星我为你摘 所有账单我来买
+    [03:58.12]跟我来 耍帅 帽子一起歪歪戴
+    [04:03.22]全世界我只爱你一个 永不言改
+    [04:10.22]
+    [04:28.29]爱的就是你
+    [04:30.71]
+  </textarea>
+  <img class="move-pic move1" src="./images/1.jpg" alt="">
+  <img class="move-pic move2" src="./images/2.jpg" alt="">
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      playPhoto();
+      playWords();
+      playMusic();
+      autoRefreshTime()
+      setInterval(function () {
+        autoRefreshTime()
+      }, 1000)
+      texiao()
+    });
+
+    function autoRefreshTime() {
+      var now = Date.now();
+      var oldTime = Date.parse('2018-09-08 07:54:00')
+      var diff = now - oldTime;
+      var day = Math.floor(diff / (1000 * 60 * 60 * 24))
+      var hour = Math.floor((diff - day * 1000 * 60 * 60 * 24) / (1000 * 3600))
+      var minute = Math.floor(diff % (1000 * 60 * 60) / (60 * 1000))
+      var second = Math.floor(diff % (1000 * 60) / 1000)
+      $('.title').text('和xx小姐姐相识的第' + day + '天' + hour + '小时' + minute + '分钟' + second + '秒')
+    }
+    function playMusic() {
+      var lrc = $("#lrc").val();
+      var audioDom = document.getElementById("audio");
+      var lrcArr = lrc.split("[");
+      var html = "";
+      for (var i = 0; i < lrcArr.length; i++) {
+        var arr = lrcArr[i].split("]");
+        var timer = arr[0].split(".");
+        var message = arr[1];
+        var stime = timer[0].split(":");
+        var ss = stime[0] * 60 + stime[1] * 1 - 1;
+        if (message)
+          html += "<div class='m_line ' id=" + ss + ">" + message + "</div>";
+      }
+
+      $(".music-area").html(html);
+      audioDom.addEventListener("timeupdate", function () {
+        var timer = this.currentTime;
+        var s = parseInt(timer);
+        var m = parseInt(timer / 60);
+        for (var i = 0; i < s; i++) {
+          $("#" + i).addClass("se").siblings().removeClass("se");
+        }
+        var st = m * 60 + s;
+        $(".music-area").scrollTop(st * 3);
+      });
+      audioDom.play()
+    }
+
+    function playWords() {
+      var str = '这也许是命运，也许是神迹，今生我们可以穿越人海相遇，能够在相同的时空中共同存在，甚至能感受到你的心跳和呼吸。对你而言，这也许最多只是命运的安排，只是旅程中最为短暂的一处停留，于我，却是命运女神的嫣然一笑，是千年祈愿的一朝得偿。如果与你相遇要耗费千年的时光祈祷，那么为了博你的笑颜一展，我可以再次祈求千年，经历时间的轮回，守望你的转世或永生。';
+      var i = 0, arr = str.split('');
+      var ms_stop = setInterval(function () {
+        if (i >= str.length - 1) {
+          clearInterval(ms_stop)
+        }
+        $('#words').text($('#words').text() + arr[i]);
+        i++
+      }, 260);
+    }
+
+    function playPhoto() {
+      $(".photo ul li").each(function (i) {
+        var Deg = 360 / $(".photo ul li").size();
+        $(this).css({
+          "transform": "rotateY(" + Deg * i + "deg)translateZ(180px)"
+        });
+      });
+    }
+
+    function texiao() {
+      $(document).mousedown(function (e) {
+        e.preventDefault();
+        var index = -1;
+        $(this).bind('mousemove', function (e) {
+          index++;
+          var r = Math.floor(index / 5);
+          r = r % 5;
+          var x = e.clientX;
+          var y = e.clientY;
+          var $img = $('<img src="images/' + r + '.png"  ondragstart="return false" style="top:' + (y - 25) + 'px;left:' + (x - 25) + 'px" class="texiao"/>')
+          $('body').append($img);
+          $img.animate({
+            top: (y - 225) + 'px',
+            width: 0,
+            height: 0
+          }, 1000, function () {
+            $(this).remove();
+          });
+        });
+
+      }).mouseup(function () {
+        $(this).unbind('mousemove');
+      });
+    }
+  </script>
+</body>
+
+</html>
